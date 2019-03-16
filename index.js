@@ -10,6 +10,7 @@ const signIn = require('./src/signIn');
 (async () => {
 	const username = process.env.AMAZON_USERNAME || args.username;
 	const password = process.env.AMAZON_PASSWORD || args.password;
+	const ignoreCaptchas = Boolean(process.env.IGNORE_CAPTCHAS || args.IGNORE_CAPTCHAS);
 	if (!username || !password) {
 		console.error('Missing required username and/or password!');
 		return;
@@ -17,6 +18,7 @@ const signIn = require('./src/signIn');
 	//add to process.env to be used elsewhere if needed
 	process.env.AMAZON_USERNAME = username;
 	process.env.AMAZON_PASSWORD = password;
+	process.env.IGNORE_CAPTCHAS = ignoreCaptchas;
 
 	const browser = await puppeteer.launch({headless: false});
 	const page = await browser.newPage();

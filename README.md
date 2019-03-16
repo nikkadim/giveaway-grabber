@@ -43,7 +43,7 @@ If it does happen to die, re-start it on any page like:
 $ gg --username=fake@example.com --password=123456 --page=34
 ```
 
-OR:
+OR
 
 ```bash
 $ npm start -- --page=34
@@ -55,7 +55,7 @@ If you have two factor authentication enabled, add `--2FA` flag:
 $ gg --username=fake@example.com --password=123456 --2FA
 ```
 
-OR:
+OR
 
 ```bash
 $ npm start -- --2FA
@@ -68,6 +68,17 @@ The script will wait for you to enter your code.
 Every so often Amazon will present a CAPTCHA. The script will pause at this 
 point and wait for you to enter it. The console will warn you with an `ENTER CAPTCHA` message.
 
+If you would prefer it to just keep running, skipping any entries with captchas, add `IGNORE_CAPTCHAS` to the CLI or .env file:
+
+```bash
+$ gg --username=fake@example.com --password=123456 --IGNORE_CAPTCHAS
+```
+OR
+```bash
+AMAZON_USERNAME=fake@example.com
+AMAZON_PASSWORD=123456
+IGNORE_CAPTCHAS=1
+```
 
 ## Questions
 

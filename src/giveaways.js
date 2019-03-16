@@ -44,6 +44,9 @@ async function checkForSwitchAccount(page) {
  * @returns {Promise<void>}
  */
 async function checkForCaptcha(page) {
+	if (process.env.IGNORE_CAPTCHAS) {
+		return;
+	}
 	try {
 		await page.waitForSelector('#image_captcha', { timeout: 500 });
 		console.log('ENTER CAPTCHA!');

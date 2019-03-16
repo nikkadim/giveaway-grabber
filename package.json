@@ -22,7 +22,10 @@
   ],
   "author": "Jared Chapiewsky",
   "contributors": [
-    { "name": "birdlavv", "url": "https://github.com/birdlavv" }
+    {
+      "name": "birdlavv",
+      "url": "https://github.com/birdlavv"
+    }
   ],
   "license": "MIT",
   "bugs": {
