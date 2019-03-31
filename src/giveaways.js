@@ -1,5 +1,7 @@
 /* global document */
-const { asyncForEach, sendSystemNotification } = require('./utils');
+const { asyncForEach, sendSystemNotification,  sMail } = require('./utils');
+
+
 
 /**
  * Checks if giveaway has already been entered
@@ -189,6 +191,7 @@ async function handleGiveawayResult(page) {
 			};
 			sendSystemNotification(notification);
 			console.log('Winning Entry URL: ' + page.url());
+			sMail('Winning Entry URL: ' + page.url());
 		}
 	} catch (error) {
 		console.log('could not get result, oh well. Moving on!');
